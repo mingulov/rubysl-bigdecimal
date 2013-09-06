@@ -3,7 +3,7 @@ require './lib/rubysl/bigdecimal/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "rubysl-bigdecimal"
-  spec.version       = RubySL::Bigdecimal::VERSION
+  spec.version       = RubySL::BigDecimal::VERSION
   spec.authors       = ["Brian Shirai"]
   spec.email         = ["brixen@gmail.com"]
   spec.description   = %q{Ruby standard library bigdecimal.}
