@@ -37,6 +37,11 @@ describe "BigDecimal#to_s" do
     BigDecimal.new("1.00000000000").to_s('1F').should == "1.0"
     # 0 is treated as no spaces
     BigDecimal.new("1.2345").to_s('0F').should == "1.2345"
+    # integer part also should have space every n chars
+    BigDecimal.new("12345.67891").to_s("+2F").should == "+12 34 5.67 89 1"
+    BigDecimal.new("12345.67891").to_s(" 2F").should == " 12 34 5.67 89 1"
+    # exponent does not have space every n chars
+    BigDecimal.new("1.23456789E12345").to_s("2").should == "0.12 34 56 78 9E12346"
   end
 
   it "can return a leading space for values > 0" do
